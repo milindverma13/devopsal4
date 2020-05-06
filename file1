@@ -1,0 +1,6 @@
+if sudo docker ps | grep myweb
+then
+sudo docker rm -f myweb && sudo docker run -dit -p 8082:80 -v /root/lwweb:/usr/local/apache2/htdocs --name myweb httpd
+else
+sudo docker run -dit -p 8082:80 -v /root/lwweb:/usr/local/apache2/htdocs --name myweb httpd
+fi
